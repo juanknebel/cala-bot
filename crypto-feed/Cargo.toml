@@ -11,12 +11,13 @@ crossterm = { version = "0.26.1", features = ["serde"] }
 dotenv = "0.15.0"
 eyre = "0.6.8"
 log = { version = "0.4.17", features = ["serde"] }
+rand = "0.8.5"
 reqwest = { version = "0.11.16", features = ["json"] }
 serde = { version = "1.0.159", features = ["derive"] }
 serde_json = "1.0.95"
 thiserror = "1.0.40"
 tokio = { version = "1.27.0", features = ["macros", "rt-multi-thread"] }
-tui = { version = "0.19.0", features = ["crossterm", "serde"] }
-tui-logger = "0.9.0"
+# tui = { version = "0.19.0", features = ["crossterm", "serde"] }
+# tui-logger = "0.9.0"
 tungstenite = {version = "0.18.0", features = ["native-tls"]}
 url = "2.3.1"

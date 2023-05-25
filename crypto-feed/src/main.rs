@@ -2,16 +2,23 @@ use args::{CalaArgs, Interface};
 use clap::Parser;
 use cli_app::cli_app::AppCli;
 use dotenv::dotenv;
+use rand;
 use std::{cell::RefCell, rc::Rc};
 use tokio;
-use tui_app::{app::App, crossterm_ui::start_ui};
 mod args;
 mod binance;
 mod cli_app;
-mod tui_app;
 
 #[tokio::main]
 async fn main() {
+  let a = 4;
+
+  let b = 66;
+  let c = a * b;
+  println!("{} * {} = {}", a, b, c);
+  String::new();
+  let s = 4;
+
   dotenv().ok();
   let args = CalaArgs::parse();
   match args.execution {
@@ -20,8 +27,7 @@ async fn main() {
       let _ = app.execute(subcommand).await;
     },
     Interface::Tui => {
-      let app = Rc::new(RefCell::new(App::new()));
-      let _ = start_ui(app).await;
+      todo!()
     },
   }
 }

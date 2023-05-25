@@ -19,7 +19,8 @@ impl AppCli {
             binance.stream(the_symbol.symbol)
           },
           BinanceSubCommand::Symbols => {
-            let _ = binance.list_symbols().await;
+            let symbols = binance.list_symbols().await;
+            symbols.iter().for_each(|s| println!("{}", s));
           },
         }
       },
